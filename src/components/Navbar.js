@@ -1,10 +1,14 @@
 import React from 'react';
+import {AppBar, Toolbar} from "@material-ui/core";
 
 const Navbar = () => {
   return (
-    <div>
-      navbar
-    </div>
+    <AppBar position="static">
+      <Toolbar variant="dense">
+
+
+      </Toolbar>
+    </AppBar>
   );
 };
 

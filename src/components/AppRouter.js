@@ -4,12 +4,12 @@ import {privateRoutes, publicRoutes} from "../routes";
 import {CHAT_ROUTE, LOGIN_ROUTE} from "../utils/const";
 
 const AppRouter = () => {
-  const user = false
+  const user = true
   return user ?
     (
       <Switch>
         {privateRoutes.map(({path,Component})=>
-          <Route path={path} component={Component} exact={true} />
+          <Route path={path} component={Component} exact={true} key={path}/>
         )}
         <Redirect to={CHAT_ROUTE}/>
       </Switch>
@@ -18,7 +18,7 @@ const AppRouter = () => {
     (
       <Switch>
         {publicRoutes.map(({path,Component})=>
-          <Route path={path} component={Component} exact={true} />
+          <Route path={path} component={Component} exact={true} key={path} />
         )}
         <Redirect to={LOGIN_ROUTE}/>
 
