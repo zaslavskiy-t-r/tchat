@@ -1,11 +1,25 @@
 import React from 'react';
-import {AppBar, Toolbar} from "@material-ui/core";
+import {AppBar, Button, Grid, Toolbar, Typography} from "@material-ui/core";
 
 const Navbar = () => {
-  return (
-    <AppBar position="static">
-      <Toolbar variant="dense">
+  const user = true
 
+  return (
+    <AppBar style={{background: "grey"}} position="static">
+      <Toolbar variant="dense">
+        <Typography variant="h6" color="inherit">
+          TChat
+        </Typography>
+
+        <Grid container justify={'flex-end'}>
+
+          {user ?
+            <Button variant={"outlined"}>Выйти</Button>
+          :
+            <Button variant={"outlined"}>Войти</Button>
+          }
+
+        </Grid>
 
       </Toolbar>
     </AppBar>
