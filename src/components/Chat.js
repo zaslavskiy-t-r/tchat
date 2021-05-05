@@ -20,13 +20,15 @@ const Chat = () => {
   const sendMessage = async () => {
     // console.log(value);
 
-    firestore.collection('messages').add({
-      uid: user.uid,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      text: value,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
-    })
+    if(value){
+      firestore.collection('messages').add({
+        uid: user.uid,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        text: value,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      })
+    }
 
     setValue('')
   }
